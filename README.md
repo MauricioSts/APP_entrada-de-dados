@@ -1,16 +1,43 @@
-# app_recebendo_dados
+# Tipos de entrada de dados
 
-A new Flutter project.
+## Entrada Switch
+Basicamente é um interruptor 
 
-## Getting Started
+  `SwitchListTile(
+     value: _escolhaUsuario,
+          title: Text("Deseja receber notificações?"),
+            onChanged: (bool? escolha) {
+                setState(() {
+                  _escolhaUsuario = escolha ?? false;
+             )`
+## Entrada slider
+É um termometro
+`slider()`
+acompanhado de min e max,  divisions:  e  value:
 
-This project is a starting point for a Flutter application.
+## RadioButton
+`RadioListTile(`
+            `  title: Text("Masculino"),`
+             ` value: "M",`
+               ` groupValue: _escolhaUsuario,  `
+              `  onChanged: (String? escolha) {  `
+                 ` setState(() {  `
+                  `  _escolhaUsuario = escolha;  `
+               `   });  `
+               ` },  `
+             ` ), `
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## CheckBox
+`CheckboxListTile(
+              title: Text("Comida Brasileira"),
+              secondary: Icon(Icons.add_box),
+              activeColor: Colors.green.shade200,
+              //  selected: true,
+              subtitle: Text("Comidas regionais BR"),
+              value: _comidasBr,
+              onChanged: (bool? valor) {
+                setState(() {
+                  _comidasBr = valor ?? false;
+                });
+              },
+            ),`
